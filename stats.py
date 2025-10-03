@@ -10,3 +10,18 @@ def get_num_chars(get_book_text):
         else:
             num_chars[character] += 1
     return num_chars
+
+def sort_on(item):
+    return item["num"]
+
+def sort_chars(num_chars):
+    chars = []
+    for character in num_chars:
+        if character.isalpha() is True:
+            char_dict = {}
+            char_dict["char"] = character
+            char_dict["num"] = num_chars[character] 
+            chars.append(char_dict)
+    chars.sort(reverse=True, key=sort_on)
+    return chars
+
